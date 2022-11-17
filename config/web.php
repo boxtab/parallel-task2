@@ -12,6 +12,21 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+
+        'async' => [
+            'class' => 'vxm\async\Async',
+            'appConfigFile' => '@app/config/async.php' // optional when you need to use yii feature in async process.
+        ],
+
+        'rpc' => [
+            'class' => 'mamatveev\yii2rabbitmq\RabbitComponent',
+            'host' => 'http://parallel.local',
+            'port' => 5672,
+            'user' => 'guest',
+            'password' => 'guest'
+        ],
+
+
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'yi8anVMAwRJTq-t6EfzegEdTlDco2CH4',
@@ -51,6 +66,7 @@ $config = [
             ],
         ],
         'db' => $db,
+
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

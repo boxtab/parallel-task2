@@ -14,6 +14,21 @@ return [
     ],
     'language' => 'en-US',
     'components' => [
+
+        'async' => [
+            'class' => 'vxm\async\Async',
+            'appConfigFile' => '@app/config/async.php' // optional when you need to use yii feature in async process.
+        ],
+
+        'rpc' => [
+            'class' => 'mamatveev\yii2rabbitmq\RabbitComponent',
+            'host' => 'http://parallel.local',
+            'port' => 5672,
+            'user' => 'guest',
+            'password' => 'guest'
+        ],
+
+
         'db' => $db,
         'mailer' => [
             'useFileTransport' => true,
